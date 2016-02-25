@@ -23,7 +23,9 @@ exports.InitializeViewModel = function(context, session)
 {
     var viewModel =
     {
-        turnCount: 0
+        turnCount: 0,
+        blankRow: boardDim-1,
+        blankCol: boardDim-1
     }
 
     var curr = 1;
@@ -44,36 +46,31 @@ exports.InitializeViewModel = function(context, session)
         }
     }
 
-    randomize(viewModel.board);
+    randomize(viewModel);
 
     return viewModel;
 }
 
-function randomize(board)
-{
-    var row = boardDim-1;
-    var col = boardDim-1;
- 
+function randomize(viewModel)
+{ 
     for (var i = 0; i < 250; )
     {
-        var possNewBlankRow = row;
-        var possNewBlankCol = col;
+        var possNewBlankRow = viewModel.blankRow;
+        var possNewBlankCol = viewModel.blankCol;
         if (Math.random() > 0.5)
         {
             // Mod row
-            possNewBlankRow = (Math.random() > 0.5) ? row + 1 : row - 1;
+            possNewBlankRow += (Math.random() > 0.5) ? 1 : -1;
         }
         else
         {
             // Mod col
-            possNewBlankCol = (Math.random() > 0.5) ? col + 1 : col - 1;
+            possNewBlankCol += (Math.random() > 0.5) ? 1 : -1;
         }
 
         if ((possNewBlankRow >= 0) && (possNewBlankRow < boardDim) && (possNewBlankCol >= 0) && (possNewBlankCol < boardDim))
         {
-            toggle(board, possNewBlankRow, possNewBlankCol);
-            row = possNewBlankRow;
-            col = possNewBlankCol;
+            toggle(viewModel, possNewBlankRow, possNewBlankCol);
             i++; // Only count valid moves
         }
     }
@@ -98,30 +95,54 @@ function isSolved(board)
     return false;
 }
 
-function toggle(board, row, col)
+function toggle(viewModel, row, col)
 {
-    if ((row < boardDim-1) && !board[row+1][col].number)
+    if ((row == viewModel.blankRow) && (col == viewModel.blankCol))
     {
-        board[row+1][col] = board[row][col];
+        return false; // Selected location is already blank, NOOP
     }
-    else if ((row > 0) && !board[row-1][col].number)
+    else if (row == viewModel.blankRow)
     {
-        board[row-1][col] = board[row][col];
+        if (col < viewModel.blankCol) // Shift cells left
+        {
+            for (var i = viewModel.blankCol; i > col; i--)
+            {
+                viewModel.board[row][i] = viewModel.board[row][i-1];
+            }
+        }
+        else // Shift cells right
+        {
+            for (var i = viewModel.blankCol; i < col; i++)
+            {
+                viewModel.board[row][i] = viewModel.board[row][i+1];
+            }
+        }
     }
-    else if ((col < boardDim-1) && !board[row][col+1].number)
+    else if (col == viewModel.blankCol)
     {
-        board[row][col+1] = board[row][col];
-    }
-    else if ((col > 0) && !board[row][col-1].number)
-    {
-        board[row][col-1] = board[row][col];
+        if (row < viewModel.blankRow) // Shift cells up
+        {
+            for (var i = viewModel.blankRow; i > row; i--)
+            {
+                viewModel.board[i][col] = viewModel.board[i-1][col];
+            }
+        }
+        else // Shift cells down
+        {
+            for (var i = viewModel.blankRow; i  < row; i++)
+            {
+                viewModel.board[i][col] = viewModel.board[i+1][col];
+            }
+        }
     }
     else
     {
-        return false;
+        return false; // Invalid turn (blank is not on the chosen row/col), NOOP
     }
 
-    board[row][col] = {};   
+    viewModel.board[row][col] = {};
+    viewModel.blankRow = row;
+    viewModel.blankCol = col;   
     return true;
 }
 
@@ -129,7 +150,7 @@ exports.Commands =
 {
     squareTapped: function(context, session, viewModel, params)
     {
-        if (toggle(viewModel.board, params.row, params.col))
+        if (toggle(viewModel, params.row, params.col))
         {
             viewModel.turnCount++;
             if (isSolved(viewModel.board))
