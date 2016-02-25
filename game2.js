@@ -88,7 +88,7 @@ function isSolved(board)
             }
             else if (((row * boardDim) + col + 1) != board[row][col].number)
             {
-                break; // Found a square out of position
+                return false; // Found a square out of position
             }
         }
     }
