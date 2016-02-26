@@ -28,6 +28,8 @@ exports.InitializeViewModel = function(context, session)
         blankCol: boardDim-1
     }
 
+    // Populate the board (not all random boards are solvable, so we start with a solved board, then scramble it).
+    //
     var curr = 1;
     viewModel.board = new Array(boardDim);
     for (var row = 0; row < boardDim; row++) 
@@ -35,7 +37,7 @@ exports.InitializeViewModel = function(context, session)
         viewModel.board[row] = new Array(boardDim);
         for (var col = 0; col < boardDim; col++) 
         {
-            if (curr <= ((boardDim * boardDim) - 1))
+            if (curr < (boardDim * boardDim))
             {                
                 viewModel.board[row][col] = { number: curr++, background: "Orange" };
             }
@@ -46,34 +48,32 @@ exports.InitializeViewModel = function(context, session)
         }
     }
 
-    randomize(viewModel);
-
-    return viewModel;
-}
-
-function randomize(viewModel)
-{ 
-    for (var i = 0; i < 250; )
+    // Scramble the board
+    //
+    for (var i = 0; i < 250; i++)
     {
-        var possNewBlankRow = viewModel.blankRow;
-        var possNewBlankCol = viewModel.blankCol;
+        var newBlankRow = viewModel.blankRow;
+        var newBlankCol = viewModel.blankCol;
         if (Math.random() > 0.5)
         {
-            // Mod row
-            possNewBlankRow += (Math.random() > 0.5) ? 1 : -1;
+            // Pick a new row at random
+            while (newBlankRow == viewModel.blankRow)
+            {
+                newBlankRow = Math.floor(Math.random() * boardDim); 
+            }
         }
         else
         {
-            // Mod col
-            possNewBlankCol += (Math.random() > 0.5) ? 1 : -1;
+            // Pick a new col at random
+            while (newBlankCol == viewModel.blankCol)
+            {
+                newBlankCol = Math.floor(Math.random() * boardDim); 
+            }
         }
-
-        if ((possNewBlankRow >= 0) && (possNewBlankRow < boardDim) && (possNewBlankCol >= 0) && (possNewBlankCol < boardDim))
-        {
-            toggle(viewModel, possNewBlankRow, possNewBlankCol);
-            i++; // Only count valid moves
-        }
+        toggle(viewModel, newBlankRow, newBlankCol);
     }
+
+    return viewModel;
 }
 
 function isSolved(board)
@@ -142,7 +142,7 @@ function toggle(viewModel, row, col)
 
     viewModel.board[row][col] = {};
     viewModel.blankRow = row;
-    viewModel.blankCol = col;   
+    viewModel.blankCol = col;
     return true;
 }
 
@@ -156,7 +156,7 @@ exports.Commands =
             if (isSolved(viewModel.board))
             {
                 return Synchro.showMessage(context, { message: "Congrats!  You solved it!" });
-            }            
+            }
         }
     }
 }
