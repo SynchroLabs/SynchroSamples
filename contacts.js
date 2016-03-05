@@ -1,5 +1,7 @@
 ﻿// Contacts page
 //
+var lodash = require('lodash');
+
 var imgUser = Synchro.getResourceUrl("user.png");
 
 exports.View =
@@ -62,7 +64,7 @@ exports.Commands =
     },
     remove: function(context, session, viewModel)
     {
-        viewModel.contacts.remove(viewModel.selectedContacts);
+        lodash.pullAllWith(viewModel.contacts, viewModel.selectedContacts, lodash.isEqual);
         viewModel.selectedContacts = [];
     },
 }

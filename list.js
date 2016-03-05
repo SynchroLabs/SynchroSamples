@@ -1,5 +1,7 @@
 // List page
 //
+var lodash = require('lodash');
+
 exports.View =
 {
     title: "List example",
@@ -45,7 +47,7 @@ exports.Commands =
     },
     remove: function(context, session, viewModel)
     {
-        viewModel.items.remove(viewModel.selectedItems);
+        lodash.pullAllWith(viewModel.items, viewModel.selectedItems, lodash.isEqual);
         viewModel.selectedItems = [];
     },
 }
