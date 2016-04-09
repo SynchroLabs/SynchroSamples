@@ -43,7 +43,7 @@ exports.Commands =
         viewModel.message = "Image tapped: " + params.count;
         var thisTap = ++viewModel.nextTap;
         yield Synchro.interimUpdateAwaitable(context);
-        yield Synchro.waitForAwaitable(context, waitInterval, 1000);
+        yield Synchro.yieldAwaitable(context, function(callback){ waitInterval(1000, callback) });;
         if (thisTap == viewModel.nextTap)
         {
             // If no other taps came in during the wait, then let's clear the message...

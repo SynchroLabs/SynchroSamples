@@ -43,14 +43,14 @@ exports.Commands =
     {
         viewModel.message = "Red tapped";
         yield Synchro.interimUpdateAwaitable(context);
-        yield Synchro.waitForAwaitable(context, waitInterval, 1000);
+        yield Synchro.yieldAwaitable(context, function(callback){ waitInterval(1000, callback) });;
         viewModel.message = "";
     },
     greenTapped: function * (context, session, viewModel)
     {
         viewModel.message = "Green tapped";
         yield Synchro.interimUpdateAwaitable(context);
-        yield Synchro.waitForAwaitable(context, waitInterval, 1000);
+        yield Synchro.yieldAwaitable(context, function(callback){ waitInterval(1000, callback) });;
         viewModel.message = "";
     },
 }

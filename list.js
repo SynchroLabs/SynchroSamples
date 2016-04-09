@@ -29,7 +29,7 @@ exports.InitializeViewModel = function(context, session)
     {
         itemToAdd: "",
         items: [ "white", "black", "yellow" ],
-        selectedItems: [ "black" ],
+        selectedItems: [ "black" ]
     }
     return viewModel;
 }

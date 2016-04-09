@@ -7,7 +7,7 @@ exports.View =
     title: "Buttons",
     elements:
     [
-        { control: "button", caption: "Button", foreground: "CornflowerBlue", background: "Black", width: 125, binding: "text" },
+        { control: "button", caption: "Button", foreground: "CornflowerBlue", background: "Black", binding: "text" },
         { control: "button", resource: imgCloud, width: 125, height: 125, binding: "image" },
         { control: "text", value: "{message}", fontsize: 12 },
     ]
@@ -33,14 +33,14 @@ exports.Commands =
     {
         viewModel.message = "Caption button";
         yield Synchro.interimUpdateAwaitable(context);
-        yield Synchro.waitForAwaitable(context, waitInterval, 1000);
+        yield Synchro.yieldAwaitable(context, function(callback){ waitInterval(1000, callback) });;
         viewModel.message = "";
     },
     image: function * (context, session, viewModel)
     {
         viewModel.message = "Image button";
         yield Synchro.interimUpdateAwaitable(context);
-        yield Synchro.waitForAwaitable(context, waitInterval, 1000);
+        yield Synchro.yieldAwaitable(context, function(callback){ waitInterval(1000, callback) });;
         viewModel.message = "";
     },
 }
