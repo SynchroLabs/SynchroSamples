@@ -15,6 +15,10 @@ exports.View =
             { control: "rectangle", height: "100", width: "*", fill: "Red", border: "Blue", borderThickness: 5 },
             { control: "edit", multiline: true, placeholder: "100 tall", width: 200, height: 100, fontsize: "{fontsize}", binding: "userMultilineText"},
             { control: "edit", multiline: true, placeholder: "3 lines tall", width: 200, lines: 3, fontsize: "{fontsize}", binding: "userMultilineText"},
+            { control: "text", value: "Left", fontsize: 12, textAlignment: "Left", width: "*" },
+            { control: "text", value: "Center", fontsize: 12, textAlignment: "Center", width: "*" },
+            { control: "text", value: "Right", fontsize: 12, textAlignment: "Right", width: "*" },
+            { control: "text", value: "This text should get ellipsized since it's so long", fontsize: 12, ellipsize: true, width: "200" },
             ]
         }
     ]
@@ -25,7 +29,7 @@ exports.InitializeViewModel = function (context, session) {
     {
         userText: "Sample Text",
         userMultilineText: "",
-        fontsize: 14
+        fontsize: 10
     }
     return viewModel;
 }
