@@ -21,12 +21,18 @@ exports.View =
             { control: "text", value: "Content", fontsize: 10, width: 140, foreground: "Green", verticalAlignment: "Center" },
             { control: "slider", minimum: 0, maximum: 300, binding: "content", width: 300, verticalAlignment: "Center" },
         ] },
-        { control: "border", border: "Red", borderThickness: "{border}", cornerRadius: "{radius}", padding: "{padding}", background: "Blue", contents: [              
+        { control: "border", border: "Red", borderThickness: "{border}", cornerRadius: "{radius}", padding: "{padding}", background: "Blue", contents: [
             { control: "rectangle", width: "{content}", height: "{content}", fill: "Green", margin: 0 },
         ] },
         { control: "border", background: "Gray", padding: 20, contents: [
             { control: "text", fontsize: 10, value: "Control below" },
         ] },
+
+        // Demonstrate that star-sized child will expand to fill border...
+        { control: "border", border: "Red", borderThickness: 5, background: "Blue", height: 150, width: 150, contents: [
+            { control: "rectangle", fill: "Green", height: "*", width: "*", margin: 0, value: "Control below" },
+        ] },
+
     ]
 }
 
