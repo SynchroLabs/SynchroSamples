@@ -24,6 +24,7 @@ exports.InitializeViewModel = function (context, session)
         pages: [
             { caption: "Hello World", view: "hello" },
             { caption: "Login Sample", view: "login" },
+            { caption: "Twitter Sample", view: "tweet" },
             { caption: "Location Sample", view: "location" },
             { caption: "Click Counter Sample", view: "counter" },
             { caption: "Countdown Sample", view: "countdown" },
