@@ -5,13 +5,15 @@ exports.View =
     title: "Hello World",
     elements:
     [
+        { control: "text", value: "Enter your name:", font: { size: 12, bold: true } },
+
         { control: "stackpanel", orientation: "Horizontal", contents: [
-            { control: "text", value: "First name:", fontsize: 12, width: 200, textAlignment: "Right", margin: { top: 10, right: 10 } },
-            { control: "edit", fontsize: 12, width: 200, binding: "firstName" },
+            { control: "text", value: "First name:", fontsize: 12, width: 200, verticalAlignment: "Center", textAlignment: "Right" },
+            { control: "edit", fontsize: 12, width: 200, verticalAlignment: "Center", binding: "firstName" },
         ] },
         { control: "stackpanel", orientation: "Horizontal", contents: [
-            { control: "text", value: "Last name:", fontsize: 12, width: 200, textAlignment: "Right", margin: { top: 10, right: 10 } },
-            { control: "edit", fontsize: 12, width: 200, binding: "lastName" },
+            { control: "text", value: "Last name:", fontsize: 12, width: 200, verticalAlignment: "Center", textAlignment: "Right" },
+            { control: "edit", fontsize: 12, width: 200, verticalAlignment: "Center", binding: "lastName" },
         ] },
 
         { control: "text", value: "Hello {firstName} {lastName}", fontsize: 12 },
