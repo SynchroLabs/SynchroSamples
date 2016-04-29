@@ -13,11 +13,11 @@ exports.View =
     [
         { control: "stackpanel", orientation: "Vertical", width: "440", contents: [
             { control: "text", value: "Enter Tweet", fontsize: 12, width: "*" },
-            { control: "edit", multiline: true, placeholder: "enter tweet", width: "*", lines: 3, binding: "text"},
+            { control: "edit", multiline: true, placeholder: "enter tweet", width: "*", margin: { right: 0 }, lines: 3, binding: "text"},
             { control: "stackpanel", orientation: "Horizontal", width: "*", contents: [
                 { control: "text", value: "Characters Left:", margin: { right: 5 }, fontsize: 10, verticalAlignment: "Center", width: "*", textAlignment: "Right"},
                 { control: "text", value: "eval(140 - {text}.length)", foreground: "eval({text}.length <= 140 ? null : 'Red')", font: { bold: "eval({text}.length > 140)", size: 10 }, width: 70, verticalAlignment: "Center" },
-                { control: "button", caption: "Tweet", binding: "tweet", width: 80, margin: { left: 10, right: 0 }, verticalAlignment: "Center", enabled: "eval({text}.length > 0 && {text}.length <= 140)" },
+                { control: "button", caption: "Tweet", binding: "tweet", margin: { left: 10, right: 0 }, verticalAlignment: "Center", enabled: "eval({text}.length > 0 && {text}.length <= 140)" },
             ] },
         ] }
     ]

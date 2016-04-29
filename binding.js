@@ -11,8 +11,8 @@ exports.View =
             //
             { control: "text", value: "Defined: {notDefined}", fontsize: 10 },
             { control: "stackpanel", orientation: "Horizontal", margin: { top: 10 }, contents: [
-                { control: "button", caption: "Define", width: 100, binding: "define" },
-                { control: "button", caption: "Undefine", width: 100, binding: "undefine" },
+                { control: "button", caption: "Define", binding: "define" },
+                { control: "button", caption: "Undefine", binding: "undefine" },
             ] },
 
             // This demonostrates "one-time" binding (specified using ^)

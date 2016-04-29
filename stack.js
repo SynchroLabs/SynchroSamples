@@ -23,15 +23,15 @@ exports.View =
         ] },
 
         { control: "stackpanel", orientation: "Horizontal", visibility: "{isHorizontal}", contents: [
-            { control: "button", width: 150, caption: "Top", binding: { command: "setVAlign", align: "Top" } },
-            { control: "button", width: 150, caption: "Center", binding: { command: "setVAlign", align: "Center" } },
-            { control: "button", width: 150, caption: "Bottom", binding: { command: "setVAlign", align: "Bottom" } },
+            { control: "button", width: 135, caption: "Top", binding: { command: "setVAlign", align: "Top" } },
+            { control: "button", width: 135, caption: "Center", binding: { command: "setVAlign", align: "Center" } },
+            { control: "button", width: 135, caption: "Bottom", binding: { command: "setVAlign", align: "Bottom" } },
         ] },
 
         { control: "stackpanel", orientation: "Horizontal", visibility: "{!isHorizontal}", contents: [
-            { control: "button", width: 150, caption: "Left", binding: { command: "setHAlign", align: "Left" } },
-            { control: "button", width: 150, caption: "Center", binding: { command: "setHAlign", align: "Center" } },
-            { control: "button", width: 150, caption: "Right", binding: { command: "setHAlign", align: "Right" } },
+            { control: "button", width: 135, caption: "Left", binding: { command: "setHAlign", align: "Left" } },
+            { control: "button", width: 135, caption: "Center", binding: { command: "setHAlign", align: "Center" } },
+            { control: "button", width: 135, caption: "Right", binding: { command: "setHAlign", align: "Right" } },
         ] },
 
         { control: "border", border: "Gray", borderThickness: "5", contents: [
