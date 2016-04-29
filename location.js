@@ -42,6 +42,6 @@ exports.Commands =
 {
     locationChange: function(context, session, viewModel, params)
     {
-        console.log("COMMAND: Location change, location: " + params.location.latitude + ", " + params.location.longitude);
+        console.log("COMMAND: Location change:", params.location);
     },
 }
