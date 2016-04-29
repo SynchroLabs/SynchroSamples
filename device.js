@@ -10,6 +10,7 @@ exports.View =
         { control: "text", value: "Device Name: {deviceMetrics.deviceName}", fontsize: 12 },
         { control: "text", value: "Type: {deviceMetrics.deviceType}", fontsize: 12 },
         { control: "text", value: "Class: {deviceMetrics.deviceClass}", fontsize: 12 },
+        { control: "text", value: "UserAgent: {deviceMetrics.userAgent}", fontsize: 12, visibility: "{deviceMetrics.userAgent}" },
 
         { control: "text", value: "Client: {deviceMetrics.clientName}", fontsize: 12 },
         { control: "text", value: "Version: {deviceMetrics.clientVersion}", fontsize: 12 },
