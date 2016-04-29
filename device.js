@@ -50,6 +50,13 @@ exports.View =
         { control: "text", value: "Height (units): {deviceMetrics.heightUnits:F2}", fontsize: 12 },
         { control: "text", value: "Width (units): {deviceMetrics.widthUnits:F2}", fontsize: 12 },
         { control: "text", value: "Scaling: {deviceMetrics.scalingFactor:P1}", fontsize: 12 },
+
+        { control: "text", value: "View Metrics", font: { size: 12, bold: true } },
+
+        { control: "text", value: "Height (inches): {viewMetrics.heightInches:F2}", fontsize: 12 },
+        { control: "text", value: "Width (inches): {viewMetrics.widthInches:F2}", fontsize: 12 },
+        { control: "text", value: "Height (units): {viewMetrics.heightUnits:F2}", fontsize: 12 },
+        { control: "text", value: "Width (units): {viewMetrics.widthUnits:F2}", fontsize: 12 },
     ]
 }
 
@@ -59,6 +66,7 @@ exports.InitializeViewModel = function(context, session)
     var viewModel =
     {
         deviceMetrics: metrics.DeviceMetrics,
+        viewMetrics: metrics.ViewMetrics,
         orientation: metrics.ViewMetrics.orientation,
     }
     return viewModel;
