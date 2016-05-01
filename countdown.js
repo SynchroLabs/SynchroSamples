@@ -5,9 +5,15 @@ exports.View =
     title: "Countdown",
     elements: 
     [
-        { control: "stackpanel", orientation: "Horizontal", visibility: "{isLoading}", contents: [
-            { control: "progressring", height: 50, width: 50, value: "{isLoading}", verticalAlignment: "Center" },
-            { control: "text", value: "Loading...", foreground: "Red", font: { size: 24, bold: true }, verticalAlignment: "Center" },
+        { select: "First", contents: [
+            { filter: { deviceMetric: "os", is: "Web" }, control: "stackpanel", orientation: "Vertical", visibility: "{isLoading}", contents: [
+                { control: "progressring", width: 300, value: "{isLoading}", verticalAlignment: "Center" },
+                { control: "text", value: "Loading...", foreground: "Red", font: { size: 24, bold: true }, verticalAlignment: "Center" },
+            ] },
+            { control: "stackpanel", orientation: "Horizontal", visibility: "{isLoading}", contents: [
+                { control: "progressring", height: 50, width: 50, value: "{isLoading}", verticalAlignment: "Center" },
+                { control: "text", value: "Loading...", foreground: "Red", font: { size: 24, bold: true }, verticalAlignment: "Center" },
+            ] },
         ] },
         { control: "stackpanel", orientation: "Vertical", visibility: "{!isLoading}", contents: [
             { control: "text", value: "Count: {count}", foreground: "Green", font: { size: 24, bold: true } },
