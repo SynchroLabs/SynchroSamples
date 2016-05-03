@@ -15,13 +15,13 @@ exports.View =
             { control: "rectangle", width: "100", height: "100", fill: "{selectedColor}" },
         ] },
 
-        { control: "listbox", select: "Single", height: 250, width: 250, binding: { 
+        { control: "listview", select: "Single", height: 250, width: 300, binding: { 
             items: "colors", itemContent: "{name}",  selection: "selectedColor", selectionItem: "value", 
             onSelectionChange: { command: "clicked", control: "ListBox", colorName: "{name}" }
             } 
         },
 
-        { control: "listview", select: "Single", height: 300, width: 250, 
+        { control: "listview", select: "Single", height: 300, width: 300, 
             binding: { 
                 items: "colors", selection: "selectedColor", selectionItem: "value", 
                 onSelectionChange: { command: "clicked", control: "ListView", colorName: "{name}" } 
