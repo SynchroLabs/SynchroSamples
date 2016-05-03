@@ -4,17 +4,20 @@ exports.View = {
     title: "Text Layout",
     elements: [
         { control: "stackpanel", orientation: "Vertical", height: "*", width: "*", contents: [
-            { control: "listview", height: "*", width: "*", select: "None", binding: { items: "topics", onItemClick: { command: "topicClicked", topic: "{$data}" } }, itemTemplate:
-                { control: "stackpanel", orientation: "Horizontal", width: "*", contents: [
-                    { control: "stackpanel", orientation: "Vertical", width: "*", contents: [
-                        { control: "text", value: "{title}", width: "*", font: { size: 8, bold: true } },
-                        { control: "stackpanel", orientation: "Horizontal", width: "*", contents: [
-                            { control: "text", value: "{time}", width: "2*", fontsize: 6 },
-                            { control: "text", value: "by {author}", width: "2*", foreground: "CornflowerBlue", fontsize: 6 },
-                            { control: "text", value: "replies: {replies}", width: "*", fontsize: 6 }
+            { control: "listview", height: "*", width: "*", select: "None", binding: { items: "topics" }, 
+                header: { control: "rectangle", height: 10, width: "*", fill: "Red" },
+                itemTemplate:
+                    { control: "stackpanel", orientation: "Horizontal", width: "*", contents: [
+                        { control: "stackpanel", orientation: "Vertical", width: "*", contents: [
+                            { control: "text", value: "{title}", width: "*", font: { size: 8, bold: true } },
+                            { control: "stackpanel", orientation: "Horizontal", width: "*", contents: [
+                                { control: "text", value: "{time}", width: "2*", fontsize: 6 },
+                                { control: "text", value: "by {author}", width: "2*", foreground: "CornflowerBlue", fontsize: 6 },
+                                { control: "text", value: "replies: {replies}", width: "*", fontsize: 6 }
+                            ]}
                         ]}
-                    ]}
-                ]}
+                    ]},
+                footer: { control: "rectangle", height: 10, width: "*", fill: "Blue" },
             }
         ]}
     ]
