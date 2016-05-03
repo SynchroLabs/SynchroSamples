@@ -26,8 +26,8 @@ exports.View =
                 items: "colors", selection: "selectedColor", selectionItem: "value", 
                 onSelectionChange: { command: "clicked", control: "ListView", colorName: "{name}" } 
             }, 
-            itemTemplate: { control: "stackpanel", orientation: "Horizontal", padding: 5, contents: [
-                { control: "text", width: 65, value: "{name}" },
+            itemTemplate: { control: "stackpanel", orientation: "Horizontal", width: "*", padding: 5, contents: [
+                { control: "text", width: 100, value: "{name}" },
                 { control: "rectangle", height: 25, width: 100, fill: "{value}" },
             ] },
         },
