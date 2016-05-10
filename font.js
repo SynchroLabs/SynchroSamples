@@ -26,7 +26,7 @@ exports.View =
             { control: "toggle", binding: "currFont.italic", fontsize: 12 },
         ] },
 
-        { control: "text", value: "Testing {currFont.face}", font: { face: "{currFont.face}", size: "{currFont.size}", bold: "{currFont.bold}", italic: "{currFont.italic}" } },
+        { control: "text", value: "Testing {currFont.face}", width: "*", font: { face: "{currFont.face}", size: "{currFont.size}", bold: "{currFont.bold}", italic: "{currFont.italic}" } },
     ]
 }
 
