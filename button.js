@@ -9,6 +9,11 @@ exports.View =
     [
         { control: "button", caption: "Button", foreground: "CornflowerBlue", background: "Black", binding: "text" },
         { control: "button", resource: imgCloud, width: 125, height: 125, binding: "image" },
+
+        { control: "button", icon: "star", caption: "Like", binding: "text" },
+        { control: "button", borderless: true, icon: "thumb_up", caption: "Like", binding: "text" },
+        { control: "button", icon: "xxxx", caption: "Bad Icon", binding: "text" },
+
         { control: "text", value: "{message}", fontsize: 12 },
     ]
 }
