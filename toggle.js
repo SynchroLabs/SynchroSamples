@@ -21,6 +21,8 @@ exports.View =
         { control: "togglebutton", icon: "star", caption: "Favorite", alt: "Toggle", binding: { value: "toggleState", onToggle: "onToggle" } },
         { control: "togglebutton", checkedicon: "thumb_up", uncheckedicon: "thumb_down", checkedcaption: "Like", uncheckedcaption: "Hate", checkedcolor: "Green", uncheckedcolor: "Red", alt: "Toggle", binding: { value: "toggleState", onToggle: "onToggle" } },
 
+        { control: "togglebutton", checkedicon: "thumb_up", uncheckedicon: "thumb_down", alt: "Toggle", binding: { value: "toggleState", onToggle: "onToggle" } },
+
         { control: "text", value: "Toggle state: {toggleState}" },
     ]
 }
