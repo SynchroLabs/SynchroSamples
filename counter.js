@@ -21,9 +21,9 @@ exports.View =
         //
         { select: "First", contents: [
             { select: "All", filter: { deviceMetric: "os", is: ["Windows", "WinPhone"] }, contents: [
-                { control: "commandBar.button", text: "Add", icon: "Add", commandBar: "Bottom", commandType: "Secondary", binding: { command: "vary", amount: 1 } },
-                { control: "commandBar.button", text: "Subtract", icon: "Remove", commandBar: "Bottom", commandType: "Secondary", binding: { command: "vary", amount: -1 }, enabled: "{count}" },
-                { control: "commandBar.button", text: "Reset", icon: "Delete", commandBar: "Bottom", binding: "reset" },
+                { control: "commandBar.button", text: "Add", winIcon: "Add", commandBar: "Bottom", commandType: "Secondary", binding: { command: "vary", amount: 1 } },
+                { control: "commandBar.button", text: "Subtract", winIcon: "Remove", commandBar: "Bottom", commandType: "Secondary", binding: { command: "vary", amount: -1 }, enabled: "{count}" },
+                { control: "commandBar.button", text: "Reset", winIcon: "Delete", commandBar: "Bottom", binding: "reset" },
                 ]
             },
             { select: "All", filter: { deviceMetric: "os", is: "Android" }, contents: [
