@@ -1,14 +1,12 @@
 // Button test page (lots of variables/permutations)
 //
-var imgCloud = Synchro.getResourceUrl("cloud_system_256.png");
-
 exports.View =
 {
     title: "Buttons",
     elements:
     [
         { control: "button", caption: "Button", foreground: "CornflowerBlue", background: "Black", binding: "text" },
-        { control: "button", resource: imgCloud, width: 125, height: 125, binding: "image" },
+        { control: "button", resource: "{imgCloud}", width: 125, height: 125, binding: "image" },
 
         { control: "stackpanel", orientation: "Horizontal", contents: [
             { control: "text", value: "Enabled:", fontsize: 10, verticalAlignment: "Center" },
@@ -64,6 +62,7 @@ exports.InitializeViewModel = function(context, session)
         spacerWidth: 25,
         spacerHeight: 60,
         btnStyle: { background: "Gray", xfontsize: 20 },
+        imgCloud: Synchro.getResourceUrl(context, "cloud_system_256.png"),
         message: null
     }
     return viewModel;

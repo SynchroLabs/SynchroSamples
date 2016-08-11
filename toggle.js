@@ -1,8 +1,5 @@
 // Toggle page
 //
-var star = Synchro.getResourceUrl("star.png");
-var starEmpty = Synchro.getResourceUrl("star-empty.png");
-
 exports.View =
 {
     title: "Toggle",
@@ -16,7 +13,7 @@ exports.View =
         { filter: { deviceMetric: "os", is: ["Windows", "WinPhone"] }, control: "commandBar.toggle", text: "Favorite", icon: "Favorite", binding: { value: "toggleState", onToggle: "onToggle" } },
         { filter: { deviceMetric: "os", is: "Android" }, control: "actionBar.toggle", checkedicon: "star", uncheckedicon: "star_border", showAsAction: "IfRoom", binding: { value: "toggleState", onToggle: "onToggle" } },
         { filter: { deviceMetric: "os", is: "iOS" }, control: "navBar.toggle", checkedicon: "star", uncheckedicon: "star_border" , binding: { value: "toggleState", onToggle: "onToggle" } },
-        { filter: { deviceMetric: "os", is: "Web" }, control: "imagetoggle", checkedresource: star, uncheckedresource: starEmpty, alt: "Toggle", binding: { value: "toggleState", onToggle: "onToggle" } },
+        { filter: { deviceMetric: "os", is: "Web" }, control: "imagetoggle", checkedresource: "{star}", uncheckedresource: "{starEmpty}", alt: "Toggle", binding: { value: "toggleState", onToggle: "onToggle" } },
 
         { control: "togglebutton", icon: "star", caption: "Favorite", alt: "Toggle", binding: { value: "toggleState", onToggle: "onToggle" } },
         { control: "togglebutton", checkedicon: "thumb_up", uncheckedicon: "thumb_down", checkedcaption: "Like", uncheckedcaption: "Hate", checkedcolor: "Green", uncheckedcolor: "Red", alt: "Toggle", binding: { value: "toggleState", onToggle: "onToggle" } },
@@ -31,7 +28,9 @@ exports.InitializeViewModel = function(context, session)
 {
     var viewModel =
     {
-        toggleState: false 
+        toggleState: false, 
+        star: Synchro.getResourceUrl(context, "star.png"),
+        starEmpty: Synchro.getResourceUrl(context, "star-empty.png")
     }
     return viewModel;
 }

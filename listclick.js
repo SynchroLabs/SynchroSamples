@@ -1,7 +1,5 @@
 ﻿// List Click page
 //
-var imgUser = Synchro.getResourceUrl("user.png");
-
 exports.View =
 {
     title: "List Click",
@@ -13,7 +11,7 @@ exports.View =
                 { control: "text", value: "Click an item...", fontsize: 16 },
                 { control: "listview", select: "None", height: 300, maxheight: 300, width: 350, binding: { items: "items", onItemClick: { command: "itemClicked", itemData: "{data}" } }, itemTemplate:
                     { control: "stackpanel", orientation: "Horizontal", padding: 5, contents: [
-                        { control: "image", resource: imgUser, height: 50, width: 50 },
+                        { control: "image", resource: "{imgUser}", height: 50, width: 50 },
                         { control: "text", value: "{title}" },
                     ] },
                 },
@@ -35,6 +33,7 @@ exports.InitializeViewModel = function(context, session)
             { title: "Item Number Four", data: "four" },
         ],
         lastClicked: "none",
+        imgUser: Synchro.getResourceUrl(context, "user.png")
     }
     return viewModel;
 }

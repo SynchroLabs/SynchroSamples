@@ -1,7 +1,5 @@
 ﻿// Image page
 //
-var imgUser = Synchro.getResourceUrl("user.png");
-
 exports.View =
 {
     title: "Image",
@@ -12,7 +10,7 @@ exports.View =
             { control: "slider", minimum: 10, maximum: 400, binding: "size", width: 300, verticalAlignment: "Center" },
             ]
         },
-        { control: "image", resource: imgUser, height: "{size}", width: "{size}", binding: { command: "imageTapped", count: "{nextTap}" } },
+        { control: "image", resource: "{imgUser}", height: "{size}", width: "{size}", binding: { command: "imageTapped", count: "{nextTap}" } },
         { control: "text", value: "{message}", fontsize: 12, visibility: "{message}" },
     ]
 }
@@ -21,6 +19,7 @@ exports.InitializeViewModel = function (context, session)
 {
     var viewModel =
     {
+        imgUser: Synchro.getResourceUrl(context, "user.png"),
         size: 100,
         nextTap: 1,
         message: null,

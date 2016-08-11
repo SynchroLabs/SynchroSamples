@@ -2,8 +2,6 @@
 //
 var lodash = require('lodash');
 
-var imgUser = Synchro.getResourceUrl("user.png");
-
 exports.View =
 {
     title: "Contacts",
@@ -14,7 +12,7 @@ exports.View =
             { control: "text", value: "Your Contacts", fontsize: 12 },
             { control: "listview", select: "Multiple", height: 300, maxheight: 300, width: 300, binding: { items: "contacts", selection: "selectedContacts" }, itemTemplate:
                 { control: "stackpanel", orientation: "Horizontal", padding: 5, contents: [
-                    { control: "image", resource: imgUser, height: 50, width: 50 },
+                    { control: "image", resource: "{imgUser}", height: 50, width: 50 },
                     { control: "stackpanel", orientation: "Vertical", contents: [
                         { control: "text", value: "{first}" },
                         { control: "text", value: "{last}" },
@@ -38,6 +36,7 @@ exports.InitializeViewModel = function(context, session, params, state)
     {
         viewModel = 
         {
+            imgUser: Synchro.getResourceUrl(context, "user.png"),
             contacts: [ { first: "John", last: "Smith" }, { first: "George", last: "Washington" }, ],
             selectedContacts: [],
         }

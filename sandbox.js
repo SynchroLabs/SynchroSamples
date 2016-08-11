@@ -1,8 +1,5 @@
 ﻿// Sandbox page
 //
-var userImage =  Synchro.getResourceUrl("user.png");
-var profileImage = Synchro.getResourceUrl("cloud_system_256.png");
-
 exports.View =
 {
     title: "Sandbox",
@@ -25,10 +22,10 @@ exports.View =
 exports.InitializeViewModel = function(context, session)
 {
     var viewModel =
-  {
-        image: profileImage,
+    {
         container: Synchro.getConfig(context, "container")
     }
+    viewModel.image = switchImages(contect, session, viewModel);
     return viewModel;
 }
 
@@ -36,6 +33,9 @@ exports.Commands =
 {
     switchImages: function(context, session, viewModel)
     {
+        var profileImage = Synchro.getResourceUrl(context, "cloud_system_256.png");
+        var userImage =  Synchro.getResourceUrl(context, "user.png");
+
         if (viewModel.image == userImage)
         {
             viewModel.image = profileImage;

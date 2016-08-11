@@ -43,16 +43,16 @@ exports.View =
     ]
 }
 
-function imageUrl(img)
+function imageUrl(context, img)
 {
-    return Synchro.getResourceUrl(img + ".jpg");
+    return Synchro.getResourceUrl(context, img + ".jpg");
 }
 
 exports.InitializeViewModel = function (context, session)
 {
     var viewModel =
     {
-        img: imageUrl("landscape"),
+        img: imageUrl(context, "landscape"),
         scale: null,
         alignH: "Center",
         alignV: "Center",
@@ -64,7 +64,7 @@ exports.Commands =
 {
     setImage: function(context, session, viewModel, params)
     {
-        viewModel.img = imageUrl(params.image);
+        viewModel.img = imageUrl(context, params.image);
     },
     setScale: function(context, session, viewModel, params)
     {

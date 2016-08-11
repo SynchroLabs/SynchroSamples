@@ -1,14 +1,12 @@
 // Hello page
 //
-var imgCloud = Synchro.getResourceUrl("cloud_system_256.png");
-
 exports.View =
 {
     title: "Buttons",
     elements:
     [
         { control: "button", caption: "Button", foreground: "CornflowerBlue", background: "Black", binding: "text" },
-        { control: "button", resource: imgCloud, width: 125, height: 125, binding: "image" },
+        { control: "button", resource: "{imgCloud}", width: 125, height: 125, binding: "image" },
 
         { control: "button", icon: "star", caption: "Like", binding: "text" },
         { control: "button", borderless: true, icon: "thumb_up", caption: "Like", binding: "text" },
@@ -22,6 +20,7 @@ exports.InitializeViewModel = function(context, session)
 {
     var viewModel =
     {
+        imgCloud: Synchro.getResourceUrl(context, "cloud_system_256.png"),
         message: null,
     }
     return viewModel;

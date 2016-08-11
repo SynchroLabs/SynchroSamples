@@ -1,7 +1,5 @@
 // ListView header and foolter
 //
-var imgUser = Synchro.getResourceUrl("user.png");
-
 exports.View =
 {
     title: "ListView Sample",
@@ -12,7 +10,7 @@ exports.View =
                 header: { control: "text", value: "US Presidents of America", fontsize: 12 },
                 itemTemplate:
                     { control: "stackpanel", orientation: "Horizontal", padding: 5, contents: [
-                        { control: "image", resource: imgUser, height: 50, width: 50 },
+                        { control: "image", resource: "{imgUser}", height: 50, width: 50 },
                         { control: "stackpanel", orientation: "Vertical", contents: [
                             { control: "text", value: "{first}" },
                             { control: "text", value: "{last}" },
@@ -39,7 +37,8 @@ exports.InitializeViewModel = function(context, session)
             { first: "Andrew", last: "Jackson" }, 
         ],
         selectedPresident: { first: "Abraham", last: "Lincoln" },
-        showFooter: true
+        showFooter: true,
+        imgUser: Synchro.getResourceUrl(context, "user.png")
     }
     return viewModel;
 }
