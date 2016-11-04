@@ -12,7 +12,7 @@ exports.View =
             ] },
             { control: "edit", fontsize: "{fontsize}", placeholder: "Single Line", width: 200, binding: "userText" },
             { control: "text", value: "{userText}", fontsize: 12, width: "*" },
-            { control: "rectangle", height: "100", width: "*", fill: "Red", border: "Blue", borderThickness: 5 },
+            { control: "rectangle", height: "100", width: "*", color: "Red", border: "Blue", borderThickness: 5 },
             { control: "edit", multiline: true, placeholder: "100 tall", width: 200, height: 100, fontsize: "{fontsize}", binding: "userMultilineText"},
             { control: "edit", multiline: true, placeholder: "3 lines tall", width: 200, lines: 3, fontsize: "{fontsize}", binding: "userMultilineText"},
             { control: "text", value: "Left", fontsize: 12, textAlignment: "Left", width: "*" },

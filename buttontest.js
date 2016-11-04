@@ -17,33 +17,33 @@ exports.View =
 
         { control: "stackpanel", orientation: "Horizontal", contents: [
             { control: "button", icon: "{buttonIcon}", caption: "{buttonCap}", binding: "text", enabled: "{enabled}", style: "btnStyle" },
-            { control: "rectangle", fill: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
+            { control: "rectangle", color: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
             { control: "button", caption: "{buttonCap}", binding: "text", enabled: "{enabled}", style: "btnStyle" },
-            { control: "rectangle", fill: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
+            { control: "rectangle", color: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
             { control: "button", icon: "{buttonIcon}", binding: "text", enabled: "{enabled}", style: "btnStyle" },
         ]},
 
         { control: "stackpanel", orientation: "Horizontal", contents: [
             { control: "button", width: 150, icon: "{buttonIcon}", caption: "{buttonCap}", binding: "text", enabled: "{enabled}", style: "btnStyle" },
-            { control: "rectangle", fill: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
+            { control: "rectangle", color: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
             { control: "button", width: 150, caption: "{buttonCap}", binding: "text", enabled: "{enabled}", style: "btnStyle" },
-            { control: "rectangle", fill: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
+            { control: "rectangle", color: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
             { control: "button", width: 75, icon: "{buttonIcon}", binding: "text", enabled: "{enabled}", style: "btnStyle" },
         ]},
 
         { control: "stackpanel", orientation: "Horizontal", contents: [
             { control: "button", borderless: true, icon: "{buttonIcon}", caption: "{buttonCap}", binding: "text", height: "{buttonHeight}", enabled: "{enabled}", style: "btnStyle" },
-            { control: "rectangle", fill: "Red", width: "{spacerWidth}", height: "{spacerHeight}"},
+            { control: "rectangle", color: "Red", width: "{spacerWidth}", height: "{spacerHeight}"},
             { control: "button", borderless: true, caption: "{buttonCap}", binding: "text", height: "{buttonHeight}", enabled: "{enabled}", style: "btnStyle" },
-            { control: "rectangle", fill: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
+            { control: "rectangle", color: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
             { control: "button", borderless: true, icon: "{buttonIcon}", binding: "text", height: "{buttonHeight}", enabled: "{enabled}", style: "btnStyle" },
         ]},
 
         { control: "stackpanel", orientation: "Horizontal", contents: [
             { control: "button", borderless: true, foreground: "Black", icon: "{buttonIcon}", caption: "{buttonCap}", binding: "text", height: "{buttonHeight}", enabled: "{enabled}", style: "btnStyle" },
-            { control: "rectangle", fill: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
+            { control: "rectangle", color: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
             { control: "button", borderless: true, foreground: "White", caption: "{buttonCap}", binding: "text", height: "{buttonHeight}", enabled: "{enabled}", style: "btnStyle" },
-            { control: "rectangle", fill: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
+            { control: "rectangle", color: "Red", width: "{spacerWidth}", height: "{spacerHeight}" },
             { control: "button", borderless: true, foreground: "Red", icon: "{buttonIcon}", binding: "text", height: "{buttonHeight}", enabled: "{enabled}", style: "btnStyle" },
         ]},
 

@@ -7,20 +7,24 @@ exports.View =
     [
         { control: "stackpanel", orientation: "Vertical", height: "*", width: "*", contents: [
             { control: "listview", select: "Single", height: "*", width: "*", binding: { items: "presidents", selection: "selectedPresident", onItemClick: { command: "itemClicked", president: "{$data}" } }, 
-                header: { control: "text", value: "US Presidents of America", fontsize: 12 },
-                itemTemplate:
+                header: [
+                    { control: "text", value: "US Presidents of America", fontsize: 12 }
+                ],
+                itemTemplate: [
                     { control: "stackpanel", orientation: "Horizontal", padding: 5, contents: [
                         { control: "image", resource: "{$root.imgUser}", height: 50, width: 50 },
                         { control: "stackpanel", orientation: "Vertical", contents: [
                             { control: "text", value: "{first}" },
                             { control: "text", value: "{last}" },
                         ] },
-                    ] },
-                footer:
+                    ] }
+                ],
+                footer: [
                     { control: "stackpanel", orientation: "Vertical", width: "*", visibility: "{showFooter}", contents: [
                         { control: "text", value: "Displaying {presidents} presidents of the United States", width: "*", fontsize: 12 },
                         { control: "button", caption: "Load more...", binding: "loadMore" },
                     ] }
+                ]
             },
             { control: "text", value: "Selected: Mr. {selectedPresident.last}", visibility: "{selectedPresident}", fontsize: 12 },            
         ] },

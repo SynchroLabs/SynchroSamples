@@ -10,8 +10,8 @@ exports.View =
                 { control: "toggle", binding: "showRed", caption: "Show Red", onLabel: "Showing", offLabel: "Hiding", fontsize: 12 },
                 { control: "toggle", binding: "showBlue", caption: "Show Blue", onLabel: "Showing", offLabel: "Hiding", fontsize: 12 },
             ] },
-            { control: "rectangle", height: "*", width: "*", fill: "Red", margin: 0, visibility: "{showRed}" },
-            { control: "rectangle", height: "*", width: "*", fill: "Blue", margin: 0, visibility: "{showBlue}" },
+            { control: "rectangle", height: "*", width: "*", color: "Red", margin: 0, visibility: "{showRed}" },
+            { control: "rectangle", height: "*", width: "*", color: "Blue", margin: 0, visibility: "{showBlue}" },
         ] }
     ]
 }

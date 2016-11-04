@@ -7,11 +7,11 @@ exports.View =
     [
         { control: "stackpanel", orientation: "Horizontal", width: "*", contents: [
             { control: "stackpanel", orientation: "Horizontal", width: "*", contents: [
-                { control: "rectangle", height: "100", width: "*", fill: "Red", border: "Blue", borderThickness: 5 },
+                { control: "rectangle", height: "100", width: "*", color: "Red", border: "Blue", borderThickness: 5 },
                 ],
             },
             { control: "stackpanel", orientation: "Horizontal", contents: [
-                { control: "rectangle", height: "100", width: "100", fill: "Green", border: "Yellow", borderThickness: 5 },
+                { control: "rectangle", height: "100", width: "100", color: "Green", border: "Yellow", borderThickness: 5 },
                 ]
             }
             ]

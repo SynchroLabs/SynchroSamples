@@ -12,7 +12,7 @@ exports.View =
         },
 
         { control: "border", border: "White", borderThickness: "5", contents: [
-            { control: "rectangle", width: "100", height: "100", fill: "{selectedColor}" },
+            { control: "rectangle", width: "100", height: "100", color: "{selectedColor}" },
         ] },
 
         { control: "listview", select: "Single", height: 250, width: 300, binding: { 
@@ -26,10 +26,12 @@ exports.View =
                 items: "colors", selection: "selectedColor", selectionItem: "value", 
                 onSelectionChange: { command: "clicked", control: "ListView", colorName: "{name}" } 
             }, 
-            itemTemplate: { control: "stackpanel", orientation: "Horizontal", width: "*", padding: 5, contents: [
-                { control: "text", width: 100, value: "{name}" },
-                { control: "rectangle", height: 25, width: 100, fill: "{value}" },
-            ] },
+            itemTemplate: [
+                { control: "stackpanel", orientation: "Horizontal", width: "*", padding: 5, contents: [
+                    { control: "text", width: 100, value: "{name}" },
+                    { control: "rectangle", height: 25, width: 100, color: "{value}" },
+                ] }
+            ]
         },
     ]
 }

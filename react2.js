@@ -11,7 +11,7 @@ exports.View =
     [
         { control: "stackpanel", style: "container", contents: [
             { control: "text", style: "loading", visibility: "{!responseData.movies}" },
-            { control: "listview", style: "listView", binding: "responseData.movies", itemTemplate:
+            { control: "listview", style: "listView", binding: "responseData.movies", itemTemplate: [
                 { control: "stackpanel", style: "listItem", contents: [
                     { control: "image", style: "thumbnail", resource: "{posters.thumbnail}" },
                     { control: "stackpanel", style: "rightContainer", contents: [
@@ -19,7 +19,7 @@ exports.View =
                         { control: "text", style: "year", value: "{year}" },
                     ]}
                 ]}
-            }
+            ]}
         ]}
     ]
 }

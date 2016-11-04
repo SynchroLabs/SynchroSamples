@@ -25,7 +25,7 @@ exports.View =
         { control: "stackpanel", orientation: "Vertical", margin: 0, width: "*", contents: [
             { control: "text", value: "Turn Out the Lights", fontsize: 12, horizontalAlignment: "Center" },
             { control: "stackpanel", orientation: "Horizontal", margin: 0, horizontalAlignment: "Center", binding: { foreach: "board" }, contents: [
-                { control: "rectangle", height: 75, width: 75, margin: 5,  fill: "{background}", 
+                { control: "rectangle", height: 75, width: 75, margin: 5,  color: "{background}", 
                   binding: { foreach: "$data", onTap: { command: "squareTapped", row: "{$parent.$index}", col: "{$index}" } } },
             ] },
             { control: "text", value: "Turns: {turnCount}, lights: {lights}", fontsize: "12", horizontalAlignment: "Center" }

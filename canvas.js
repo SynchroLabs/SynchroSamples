@@ -6,8 +6,8 @@ exports.View =
     elements:
     [
         { control: "canvas", width: "*", height: "300", contents: [
-            { control: "rectangle", width: "100", height: "100", left: "{redLeft}", top: "{redTop}", fill: "Red", margin: 0, binding: "redTapped" },
-            { control: "rectangle", width: "100", height: "100", left: "100", top: "100",fill: "Green", margin: 0, binding: "greenTapped" },
+            { control: "rectangle", width: "100", height: "100", left: "{redLeft}", top: "{redTop}", color: "Red", margin: 0, binding: "redTapped" },
+            { control: "rectangle", width: "100", height: "100", left: "100", top: "100", color: "Green", margin: 0, binding: "greenTapped" },
         ] },
         { control: "stackpanel", orientation: "Horizontal", contents: [
             { control: "text", value: "Red Left", fontsize: 10, width: 140, verticalAlignment: "Center" },

@@ -22,7 +22,7 @@ exports.View =
             { control: "slider", minimum: 0, maximum: 300, binding: "content", width: 300, verticalAlignment: "Center" },
         ] },
         { control: "border", border: "Red", borderThickness: "{border}", cornerRadius: "{radius}", padding: "{padding}", background: "Blue", contents: [
-            { control: "rectangle", width: "{content}", height: "{content}", fill: "Green", margin: 0 },
+            { control: "rectangle", width: "{content}", height: "{content}", color: "Green", margin: 0 },
         ] },
         { control: "border", background: "Gray", padding: 20, contents: [
             { control: "text", fontsize: 10, value: "Control below" },
@@ -30,7 +30,7 @@ exports.View =
 
         // Demonstrate that star-sized child will expand to fill border...
         { control: "border", border: "Red", borderThickness: 5, background: "Blue", height: 150, width: 150, contents: [
-            { control: "rectangle", fill: "Green", height: "*", width: "*", margin: 0, value: "Control below" },
+            { control: "rectangle", color: "Green", height: "*", width: "*", margin: 0, value: "Control below" },
         ] },
 
     ]

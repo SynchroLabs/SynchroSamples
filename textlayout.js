@@ -5,8 +5,11 @@ exports.View = {
     elements: [
         { control: "stackpanel", orientation: "Vertical", height: "*", width: "*", contents: [
             { control: "listview", height: "*", width: "*", select: "None", binding: { items: "topics" }, 
-                header: { control: "rectangle", height: 10, width: "*", fill: "Red" },
+                header: [
+                    { control: "rectangle", height: 10, width: "*", color: "Red" }
+                ],
                 itemTemplate:
+                [
                     { control: "stackpanel", orientation: "Horizontal", width: "*", contents: [
                         { control: "stackpanel", orientation: "Vertical", width: "*", contents: [
                             { control: "text", value: "{title}", width: "*", font: { size: 8, bold: true } },
@@ -16,8 +19,11 @@ exports.View = {
                                 { control: "text", value: "replies: {replies}", width: "*", fontsize: 6 }
                             ]}
                         ]}
-                    ]},
-                footer: { control: "rectangle", height: 10, width: "*", fill: "Blue" },
+                    ]}
+                ],
+                footer: [
+                    { control: "rectangle", height: 10, width: "*", color: "Blue" }
+                ]
             }
         ]}
     ]

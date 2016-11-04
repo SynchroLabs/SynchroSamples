@@ -22,29 +22,29 @@ exports.View =
         //
         { control: "stackpanel", orientation: "Horizontal", contents: [
             { control: "stackpanel", orientation: "Vertical", height: 600, width: 150, margin: 0, contents: [
-                { control: "rectangle", margin: 0, height: 50, width: 50, horizontalAlignment: "Left", fill: "Red" },
-                { control: "rectangle", margin: 0, height: 50, width: 50, horizontalAlignment: "Center", fill: "Red" },
-                { control: "rectangle", margin: 0, height: 50, width: 50, horizontalAlignment: "Right", fill: "Red" },
-                { control: "rectangle", margin: 0, height: 50, width: "*", fill: "Green" },
-                { control: "rectangle", margin: 0, height: "*", width: "*", fill: "Blue" },
-                { control: "rectangle", margin: 0, height: "3*", width: "*", fill: "Red" },
+                { control: "rectangle", margin: 0, height: 50, width: 50, horizontalAlignment: "Left", color: "Red" },
+                { control: "rectangle", margin: 0, height: 50, width: 50, horizontalAlignment: "Center", color: "Red" },
+                { control: "rectangle", margin: 0, height: 50, width: 50, horizontalAlignment: "Right", color: "Red" },
+                { control: "rectangle", margin: 0, height: 50, width: "*", color: "Green" },
+                { control: "rectangle", margin: 0, height: "*", width: "*", color: "Blue" },
+                { control: "rectangle", margin: 0, height: "3*", width: "*", color: "Red" },
                 ]
             },
             { control: "stackpanel", orientation: "Vertical", width: 150, margin: 0, contents: [
                 { control: "border", height: 150, width: 150, margin: 0, background: "Blue", contents: [
-                    { control: "rectangle", height: 50, width: 50, margin: 0, horizontalAlignment: "Center", verticalAlignment: "Center", fill: "Red" },
+                    { control: "rectangle", height: 50, width: 50, margin: 0, horizontalAlignment: "Center", verticalAlignment: "Center", color: "Red" },
                 ]
                 },
                 { control: "border", height: 150, width: 150, margin: 0, background: "Green", contents: [
-                    { control: "rectangle", height: 50, width: "*",  margin: 0, verticalAlignment: "Center", fill: "Red" },
+                    { control: "rectangle", height: 50, width: "*",  margin: 0, verticalAlignment: "Center", color: "Red" },
                 ]
                 },
                 { control: "border", height: 150, width: 150, margin: 0, background: "Blue", contents: [
-                    { control: "rectangle", height: "*", width: 50, margin: 0, horizontalAlignment: "Center", fill: "Red" },
+                    { control: "rectangle", height: "*", width: 50, margin: 0, horizontalAlignment: "Center", color: "Red" },
                 ]
                 },
                 { control: "border", height: 150, width: 150, margin: 0, contents: [
-                    { control: "rectangle", height: "*", width: "*", margin: 0, background: "Red", fill: "Red" },
+                    { control: "rectangle", height: "*", width: "*", margin: 0, background: "Red", color: "Red" },
                 ]
                 },
             ]

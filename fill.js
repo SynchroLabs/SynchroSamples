@@ -5,7 +5,7 @@ exports.View =
     title: "Fill",
     elements:
     [
-        { control: "rectangle", height: "*", width: "*", fill: "Red", border: "Blue", borderThickness: 5 },
+        { control: "rectangle", height: "*", width: "*", color: "Red", border: "Blue", borderThickness: 5 },
     ]
 }
 

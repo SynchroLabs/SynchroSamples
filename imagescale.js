@@ -52,7 +52,7 @@ exports.InitializeViewModel = function (context, session)
 {
     var viewModel =
     {
-        img: imageUrl(context, "landscape"),
+        img: Synchro.getResourceUrl(context, "landscape.jpg"),
         scale: null,
         alignH: "Center",
         alignV: "Center",
@@ -64,7 +64,7 @@ exports.Commands =
 {
     setImage: function(context, session, viewModel, params)
     {
-        viewModel.img = imageUrl(context, params.image);
+        viewModel.img = Synchro.getResourceUrl(context, params.image + ".jpg");
     },
     setScale: function(context, session, viewModel, params)
     {
